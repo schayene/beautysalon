@@ -37,7 +37,7 @@ const swiper = new Swiper(".swiper-container", {
   mousewheel: true,
   keyboard: true,
   breakpoints: {
-    767: {
+    500: {
       slidesPerView: 2,
       setWrapperSize: true,
     },
@@ -89,21 +89,25 @@ function activateMenuAtCurrentSection() {
     const checkpointStart = checkpoint >= sectionTop;
     const checkpointEnd = checkpoint <= sectionTop + sectionHeight;
 
-    if(checkpointStart && checkpointEnd) {
+    if (checkpointStart && checkpointEnd) {
       document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.add('active')
+        .querySelector("nav ul li a[href*=" + sectionId + "]")
+        .classList.add("active");
     } else {
       document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.remove('active')
+        .querySelector("nav ul li a[href*=" + sectionId + "]")
+        .classList.remove("active");
     }
   }
 }
 
 // When Scroll
-window.addEventListener("scroll", function () {
-  changeHeaderWhenScroll();
-  backToTop();
-  activateMenuAtCurrentSection();
-});
+window.addEventListener(
+  "scroll",
+  function () {
+    changeHeaderWhenScroll();
+    backToTop();
+    activateMenuAtCurrentSection();
+  },
+  { passive: true }
+);

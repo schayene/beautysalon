@@ -526,16 +526,13 @@ footer .social a:hover {
 }
 
 /* Responsivo */
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1120px;
-    margin-left: auto;
-    margin-right: auto;
+@media (min-width: 500px) {
+  .section {
+    padding: 5rem 0;
   }
 
-  .section {
-    padding: 10rem 0;
+  main {
+    margin-top: var(--header-height);
   }
 
   .section header,
@@ -546,14 +543,29 @@ footer .social a:hover {
     margin-right: auto;
   }
 
-  .button {
-    height: 3.125rem;
+  /* SERVICES */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  main {
-    margin-top: var(--header-height);
+  .card {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 767px) {
+  .container {
+    max-width: 730px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
+  .section {
+    padding: 8rem 0;
+  }
+
+  /* HOME */
   #home .container {
     grid-auto-flow: column;
     justify-content: space-between;
@@ -562,6 +574,7 @@ footer .social a:hover {
 
   #home .image {
     order: 1;
+    max-width: 350px;
   }
 
   #home .text {
@@ -572,18 +585,19 @@ footer .social a:hover {
     margin-right: 0;
   }
 
+  /* ABOUT */
   #about .container {
     grid-auto-flow: column;
     margin: 0 auto;
   }
 
-  
-
+  /* TESTIMONIALS */
   #testimonials .container {
     margin-left: auto;
     margin-right: auto;
   }
 
+  /* CONTACT */
   #contact .container {
     grid-auto-flow: column;
     align-items: center;
@@ -593,6 +607,7 @@ footer .social a:hover {
     max-width: 25rem;
   }
 
+  /* FOOTER */
   footer.section {
     padding: 3.75rem 0;
   }
@@ -616,10 +631,17 @@ footer .social a:hover {
 
   .container {
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
+  .section {
+    padding: 10rem 0;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  /* NAVIGATION */
   nav .menu {
     opacity: 1;
     visibility: visible;
@@ -645,6 +667,11 @@ footer .social a:hover {
     display: none;
   }
 
+  /* HOME */
+  #home .image {
+    max-width: none;
+  }
+
   /* SERVICES */
   .cards {
     grid-template-columns: repeat(3, 1fr);
@@ -653,10 +680,17 @@ footer .social a:hover {
   .card {
     padding-left: 3rem;
     padding-right: 3rem;
+  }  
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1000px;
   }
 }
+
 /*
   
   large devices: 1023 >
-  medium devices: 767 >
 */
